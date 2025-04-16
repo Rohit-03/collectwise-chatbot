@@ -20,7 +20,7 @@ export default function Home() {
         {/* Header */}
         <div className="mb-6 text-center mt-6">
           <h1 className="mb-2 text-[40px] font-semibold leading-[1.3em] tracking-[-.01em] text-[#212121] text-center font-[Inter,sans-serif]">
-            {/* Add title text here */}
+            
           </h1>
         </div>
 

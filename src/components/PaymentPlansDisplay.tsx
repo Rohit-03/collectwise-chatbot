@@ -13,10 +13,12 @@ const PaymentPlansDisplay: React.FC<PaymentPlansDisplayProps> = ({ plans }) => {
     } else if (plan.frequency === 'weekly') {
       return `${plan.termLength} weeks`;
     } else {
-      // For biweekly, calculate total number of payments
-      return `${plan.termLength} bi-weekly (${plan.termLength * 2} payments)`;
+      return `${plan.termLength} bi-weekly payments`;
     }
   };
+
+
+
 
   return (
     <div className="my-4 w-full">

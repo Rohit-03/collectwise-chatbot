@@ -6,16 +6,6 @@ interface FinalPaymentPlanDisplayProps {
 }
 
 const FinalPaymentPlanDisplay: React.FC<FinalPaymentPlanDisplayProps> = ({ plan }) => {
-  const getDurationText = () => {
-    if (plan.frequency === 'monthly') {
-      return `${plan.termLength} months`;
-    } else if (plan.frequency === 'weekly') {
-      return `${plan.termLength} weeks`;
-    } else {
-      return `${plan.termLength} bi-weekly payments`;
-    }
-  };
-
   const getFrequencyText = () => {
     return plan.frequency.charAt(0).toUpperCase() + plan.frequency.slice(1);
   };
@@ -23,8 +13,7 @@ const FinalPaymentPlanDisplay: React.FC<FinalPaymentPlanDisplayProps> = ({ plan 
   return (
     <div className="mt-6 rounded-2xl bg-white p-6 shadow-xl ring-1 ring-gray-200">
       <h2 className="mb-6 text-lg font-semibold text-gray-800 flex items-center gap-2">
-        <span className="text-blue-600 text-xl"></span>
-        Final Payment Plan
+        <span className="text-blue-600 text-xl">Final Payment Plan</span>
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -39,8 +28,8 @@ const FinalPaymentPlanDisplay: React.FC<FinalPaymentPlanDisplayProps> = ({ plan 
         </div>
 
         <div className="rounded-xl border border-gray-100 p-4 bg-gray-50">
-          <div className="text-sm text-gray-500">Duration</div>
-          <div className="mt-1 text-base font-medium text-gray-800">{getDurationText()}</div>
+          <div className="text-sm text-gray-500">Term Length</div>
+          <div className="mt-1 text-base font-medium text-gray-800">{plan.termLength}</div>
         </div>
 
         <div className="rounded-xl border border-gray-100 p-4 bg-blue-50">
